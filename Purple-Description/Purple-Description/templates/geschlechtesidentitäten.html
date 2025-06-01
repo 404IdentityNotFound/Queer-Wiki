@@ -1,0 +1,206 @@
+{% extends 'layout.html' %}
+
+{% block title %}Geschlechtesidentitäten{% endblock %}
+
+{% block content %}
+<h1>Geschlechtesidentitäten</h1>
+
+<input type="text" id="searchInput" placeholder="Suche..." style="width: 100%; padding: 8px; margin: 20px 0; font-size: 1rem;">
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+  const input = document.getElementById("searchInput");
+  const blocks = document.querySelectorAll(".searchable");
+
+  input.addEventListener("input", function () {
+    const query = this.value.toLowerCase();
+
+    blocks.forEach((block) => {
+      const text = block.textContent.toLowerCase();
+      if (text.includes(query)) {
+        block.style.display = "";
+        const detail = block.querySelector("details");
+        if (detail) detail.open = true;
+      } else {
+        block.style.display = "none";
+      }
+    });
+  });
+});
+    </script>
+
+
+<div class="searchable">
+<p>
+<strong>Cisgender</strong>
+</p>
+<p>
+Eine Person, deren Geschlechtsidentität mit dem Geschlecht übereinstimmt, das ihnen bei der Geburt zugewiesen wurde.
+</p>
+</div>
+    
+    <div class="searchable">
+        <details>
+<summary><strong>
+Transgender</strong>
+    <img 
+        src="https://equalityaustralia.org.au/wp-content/uploads/2025/01/web16-blog-transflag-1160x768-1.jpg" 
+        alt="Transflagge" 
+        style="float:right;width:50px;height:30px;">
+</summary>
+    <br>
+<p style="padding-left: 12px";>
+<strong>Transfeminim (MTF)</strong>
+    <img 
+        src="https://nonbinary.wiki/images/b/b4/Transfeminine_pride_flag.png"                               alt="Transflagge" 
+        style="float:right;width:50px;height:30px;"></p>
+<p>
+Eine trans Frau ist eine Person, der bei der Geburt das männliche Geschlecht zugewiesen wurde, die sich aber als Frau identifiziert.
+</p>
+
+<p style="padding-left: 12px";>
+<strong>Transmaskulin (FTM)</strong>
+    <img 
+        src="https://vignette.wikia.nocookie.net/gender/images/3/34/30F2EF06-4795-47E9-A6A8-73AC7F93657B.jpeg/revision/latest?cb=20180324152013" 
+        alt="Transmaskulin Flag"
+        style="float:right;width:50px;height:30px;">
+</p>
+<p>
+Ein trans Mann ist eine Person, der bei der Geburt das weibliche Geschlecht zugewiesen wurde, die sich aber als Mann identifiziert.
+</p>
+
+<p style="padding-left: 12px";>
+<strong>Non-binary</strong>
+    <img 
+        src="https://images.squarespace-cdn.com/content/v1/5d24fc32279c27000113d15d/1563759080060-9H9PL49JU621ZJXXOE5W/ke17ZwdGBToddI8pDm48kMeilPFYmvqo51KDzSev-dEUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcjV_jILHCzHMkOLgbUzCQTugAGHp_lLypzJ8H7JEpxrFip_AYjbOebZ0l-656NHBw/image-asset.jpeg" 
+        alt="Non-binary Flag"                 
+        style="float:right;width:50px;height:30px;">
+</p>
+<p>
+Eine Person ist nicht nur männlich oder weiblich, sondern ihre Geschlechtsidentität liegt außerhalb dieser zwei Kategorien.
+</p>
+    </details>
+    </div>
+    <br>
+
+    <div class="searchable">
+<p>
+<strong>Agender</strong>
+    <img 
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Agender_pride_flag.svg/1200px-Agender_pride_flag.svg.png" 
+        alt="Agender Flag" 
+        style="float:right;width:50px;height:30px;">
+</p>
+<p>
+Menschen, die keine Geschlechtsidentität empfinden oder sich geschlechtslos fühlen.
+</p>
+    </div>
+
+    <div class="searchable">
+<p>
+<strong>Genderfluid</strong>
+    <img                                                                                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Genderfluidity_Pride-Flag.svg/1200px-Genderfluidity_Pride-Flag.svg.png" 
+        alt="Genderfluid Flag"                                                                              style="float:right;width:50px;height:30px;">
+</p>
+<p>
+Personen, deren Geschlechtsidentität sich verändert z.B.s. von Tag zu Tag oder je nach Situation.
+</p>
+    </div>
+
+    <div class="searchable">
+<p>
+<strong>Bigender</strong>
+    <img 
+        src="https://www.dictionary.com/e/wp-content/uploads/2019/02/bigender.png"                          alt="Bigender Flag" 
+        style="float:right;width:50px;height:30px;">
+</p>
+<p>
+        Menschen, die sich gleichzeitig oder abwechselnd mit zwei Geschlechtern identifizieren              (z. B. Mann und Frau).
+</p>
+    </div>
+
+    <div class="searchable">
+<p>
+<strong>Genderqueer
+    <img         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASIAAACuCAMAAAClZfCTAAAAHlBMVEW4md1rjjr///+4mdu0ldv++/3//v////38/vlpizdACoqQAAABD0lEQVR4nO3bQRHCAAADwUCBtv4NV8IhYFfCTb7ZAAAAAAAAAAAAAAAAAAAAgL8dhH0I+xJ2EvYj7E2QKEmUJEoSJYmSREmiJFGSKEmUJEoSJYmSREmiJFGSKEmUJEoSJYmSREmiJFGSKEmUJEoSJYmSREmiJFGSKEmUJEoSJYmSREmiJFGSKEmUJEoSJYmSREmiJFGSKEmU3IeTFSUrSrsIuwl7ESRKEiWJkkRJoiRRkihJlCRKEiWJkkRJoiRRkihJlCRKEiWJkkRJoiRRkihJlCRKEiWJkkRJoiRRkihJlCRKEiWJkkRJoiRRkihJlCRKEiWJkkRJoiRRkihJlCRKEiWJkkRJoiRRkihJlB7mCPXTsfV9FAAAAABJRU5ErkJggg=="            alt="Genderqueer Flag" 
+        style="float:right;width:50px;height:30px;">
+</strong>
+</p>
+<p>
+Ein Überbegriff für Menschen, die nicht in die geschlechterbinäre Norm passen.
+</p>
+    </div>
+
+    <div class="searchable">
+    <details>
+    <br>
+<summary>
+<strong>Demigender</strong>
+    <img src="https://nonbinary.wiki/images/e/ee/Deminonbinary.png" 
+         alt="Demigender Flag" style="float:right;width:50px;height:30px;">
+</summary>
+   <br>
+<p style="padding-left: 12px";>
+<strong>Demiboy</strong>
+    <img 
+        src="https://i0.wp.com/boutique-lgbtqia.fr/wp-content/uploads/2023/02/demiboy-1024x614.png?resize"                                        
+        alt="Demiboy Flag" 
+        style="float:right;width:50px;height:30px;"
+</p>
+<p class="searchable">
+Beschreibt eine Person, die sich teilweise als Mann identifiziert, aber nicht vollständig in die Kategorie "Mann" passt
+</p>
+
+<p style="padding-left: 12px";>
+<strong>Demigirl</strong>
+    <img
+        src="https://static.vecteezy.com/system/resources/previews/014/904/053/large_2x/demigirl-stripes-art-painting-demigirls-symbol-concept-for-celebrations-of-lgbtq-in-pride-month-around-the-world-free-photo.jpg" 
+        alt="Demigirl Flag" style="float:right;width:50px;height:30px;"></p>
+<p class="searchable">
+Eine Person, die sich teilweise als Frau oder mit femininen Eigenschaften identifiziert.
+</p>
+    </details>
+    </div>
+    <br>
+
+    <div class="searchable">
+<p>    
+<strong>Xenogender</strong>
+    <img 
+        src="https://lgbtqnation-assets.s3.amazonaws.com/assets/2022/03/Xenogender_pride_flag.png" 
+        alt="Xenogender Flag"
+        style="float:right;width:50px;height:30px;">
+</p>
+<p>
+Eine nicht-binäre Identität, die mit Dingen außerhalb der traditionellen menschlichen Geschlechtsvorstellungen beschrieben wird (z. B. Natur, Technologie, Emotionen).
+</p>
+    </div>
+        
+    <div class="searchable">
+<p>     
+<strong>Neutrois</strong>
+    <img 
+        src="https://abuwjaawap.cloudimg.io/v7/_lgbtqnation-assets_/assets/2022/05/neutrois.jpg?" 
+        alt="Neutrois Flag" style="float:right;width:50px;height:30px;">
+</p>
+<p>
+Eine neutrale oder geschlechtsneutrale Identität – oft verbunden mit dem Wunsch nach einem möglichst androgynen Körper.
+</p>
+    </div>
+        
+    <div class="searchable">
+<p>
+<strong>Intergeschlechtlich</strong>
+    <img 
+        src="https://www.lsvd.de/media/img/1603722307900_wn.jpg" 
+        alt="Intergeschlechtlich Flag" style="float:right;width:50px;height:30px;"</p>
+<p>
+Menschen, die mit körperlichen Merkmalen geboren wurden, die nicht eindeutig „männlich“ oder „weiblich“ sind. Das ist keine Identität an sich, aber manche identifizieren sich als          inter.
+</p>
+    </div>
+
+<p>
+Diese Liste wird laufen erweitert. Bei Fehlern und Ergänzungen kannst du uns <a href="/kontakt">Kontaktieren</a> ;)
+</p>
+{% endblock %}
